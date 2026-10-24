@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mi página personal | Josthim</title>
+
+    <style>
+        /* CONFIGURACIÓN GENERAL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #0b1120;
+            color: #f1f5f9;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* MENÚ DE NAVEGACIÓN */
+        nav {
+            background-color: #080d18;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            border-bottom: 1px solid #263449;
+        }
+
+        .logo {
+            color: #60a5fa;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 22px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav ul a {
+            color: #e2e8f0;
+            transition: color 0.3s;
+        }
+
+        nav ul a:hover {
+            color: #60a5fa;
+        }
+
+        /* PORTADA CON FOTO DE LA MOTO */
+        header {
+            min-height: 520px;
+            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.65),
+                    rgba(0, 0, 0, 0.82)
+                ),
+                url("mi-moto.jpeg");
+
+            background-size: cover;
+            background-position: center 45%;
+            background-repeat: no-repeat;
+            border-bottom: 3px solid #3b82f6;
+        }
+
+        .etiqueta {
+            color: #93c5fd;
+            border: 1px solid #60a5fa;
+            background-color: rgba(15, 23, 42, 0.65);
+            padding: 6px 16px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        header h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: white;
+            margin-bottom: 12px;
+            text-shadow: 2px 3px 12px #000000;
+        }
+
+        header p {
+            max-width: 650px;
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            color: #f1f5f9;
+            text-shadow: 2px 2px 8px #000000;
+            margin-bottom: 28px;
+        }
+
+        .boton {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .boton:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* CONTENIDO PRINCIPAL */
+        main {
+            width: 90%;
+            max-width: 1000px;
+            margin: 45px auto;
+        }
+
+        section {
+            background-color: #151f30;
+            border: 1px solid #263449;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 28px;
+        }
+
+        section h2 {
+            color: #60a5fa;
+            font-size: 1.7rem;
+            margin-bottom: 18px;
+        }
+
+        section p {
+            color: #dbe4f0;
+            margin-bottom: 12px;
+        }
+
+        /* LISTA DE INTERESES */
+        .lista-intereses {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(200px, 1fr)
+            );
+            gap: 12px;
+        }
+
+        .lista-intereses li {
+            background-color: #202d42;
+            border-left: 4px solid #3b82f6;
+            padding: 14px;
+            border-radius: 8px;
+        }
+
+        /* IMAGEN DE EJEMPLO */
+        .imagen-ejemplo {
+            display: block;
+            width: 100%;
+            max-width: 450px;
+            margin: 20px auto;
+            border-radius: 12px;
+            border: 2px solid #334155;
+        }
+
+        /* ENLACES */
+        .enlaces {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .enlace-tarjeta {
+            display: block;
+            background-color: #202d42;
+            color: #93c5fd;
+            padding: 14px 20px;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .enlace-tarjeta:hover {
+            background-color: #263b59;
+            border-color: #60a5fa;
+        }
+
+        /* PIE DE PÁGINA */
+        footer {
+            text-align: center;
+            background-color: #080d18;
+            color: #94a3b8;
+            padding: 25px 15px;
+            border-top: 1px solid #263449;
+        }
+
+        footer strong {
+            color: #60a5fa;
+        }
+
+        /* ADAPTACIÓN A CELULARES */
+        @media (max-width: 600px) {
+            nav {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav ul {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            header {
+                min-height: 450px;
+                padding: 70px 18px;
+                background-position: center center;
+            }
+
+            main {
+                width: 92%;
+                margin: 25px auto;
+            }
+
+            section {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MENÚ PRINCIPAL -->
+    <nav>
+        <a href="#inicio" class="logo">JosthimH.</a>
+
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#intereses">Intereses</a></li>
+            <li><a href="#enlaces">Enlaces</a></li>
+        </ul>
+    </nav>
+
+    <!-- PORTADA -->
+    <header id="inicio">
+        <span class="etiqueta">
+            ESTUDIANTE DE INGENIERÍA DE SISTEMAS
+        </span>
+
+        <h1>¡Hola! Soy Josthim</h1>
+
+        <p>
+            Bienvenido a mi página personal.
+            Me apasiona la tecnología, las motocicletas
+            y aprender cosas nuevas sobre el mundo digital.
+        </p>
+
+        <a href="#sobre-mi" class="boton">
+            Conocé más sobre mí
+        </a>
+    </header>
+
+    <!-- CONTENIDO -->
+    <main>
+
+        <!-- PRESENTACIÓN PERSONAL -->
+        <section id="sobre-mi">
+            <h2>Sobre mí</h2>
+
+            <p>
+                Mi nombre es Josthim y soy estudiante de
+                Ingeniería de Sistemas. Me interesa conocer
+                cómo funciona la tecnología y aprender a
+                desarrollar soluciones mediante la programación.
+            </p>
+
+            <p>
+                En esta página comparto un poco sobre mi
+                personalidad, mis intereses y algunas de las
+                cosas que me gustan. Este proyecto también
+                representa mis primeros pasos en el desarrollo
+                web utilizando HTML y CSS.
+            </p>
+        </section>
+
+        <!-- INTERESES Y HABILIDADES -->
+        <section id="intereses">
+            <h2>Mis intereses y habilidades</h2>
+
+            <p>
+                Estas son algunas de las áreas que me gustan
+                y en las que deseo seguir aprendiendo:
+            </p>
+
+            <ul class="lista-intereses">
+                <li>💻 Tecnología e informática</li>
+                <li>🌐 Desarrollo de páginas web</li>
+                <li>🏍️ Motocicletas y mundo motor</li>
+                <li>🎮 Videojuegos</li>
+                <li>📚 Aprendizaje constante</li>
+                <li>🤝 Trabajo en equipo</li>
+            </ul>
+        </section>
+
+        <!-- IMAGEN -->
+        <section>
+            <h2>Un poco de mis gustos</h2>
+
+            <p>
+                Las motocicletas deportivas son uno de mis
+                principales intereses. También disfruto
+                aprender sobre tecnología y explorar nuevas
+                herramientas digitales. 
+            </p>
+
+            <img
+                class="imagen-ejemplo"
+                src="mi-moto.jpeg"
+                alt="Motocicleta deportiva negra con su conductor"
+            >
+        </section>
+
+        <!-- ENLACES DE INTERÉS -->
+        <section id="enlaces">
+            <h2>CONTACTO</h2>
+
+            <p>
+                Estos son algunos de mi perfiles personales:
+            </p>
+
+            <div class="enlaces">
+                <a
+                    class="enlace-tarjeta"
+                    href="https://www.facebook.com/share/1MtLzW3DBK/?mibextid=wwXIfr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    FACEBOOK ↗
+                </a>
+
+                <a
+                    class="enlace-tarjeta"
+                    href="https://www.instagram.com/josthimhh_xv?obrf=MWl6dWExb2UyNXlnbg%3D%3D&utm_source=qr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    INSTAGRAM ↗
+                </a>
+
+                <a
+                    class="enlace-tarjeta"
+                    href="https://www.tiktok.com/@josthimhh_xv?_r=1&_t=ZS-9ApiP89hy3I"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    TIKTOK ↗
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>
+            Creado por <strong>Josthim Hernández</strong>
+        </p>
+
+        <p>
+            Proyecto académico de Diseño de Sistemas en Internet
+            &copy; 2026
+        </p>
+    </footer>
+
+</body>
+</html>
